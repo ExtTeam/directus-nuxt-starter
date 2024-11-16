@@ -56,7 +56,7 @@ services:
     container_name: '${COMPOSE_PROJECT_NAME:-app}-minio'
     restart: always
     image: minio/minio
-    command: server /data --console-address ":9001"
+    command: server --console-address ":9001" /data
     volumes:
       - /etc/localtime:/etc/localtime:ro
       - minio_data:/data
